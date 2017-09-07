@@ -1,5 +1,5 @@
 
-FROM ros:kinetic
+FROM ros:kinetic-ros-core-xenial
 
 # HACK: http://stackoverflow.com/questions/25193161/chfn-pam-system-error-intermittently-in-docker-hub-builds
 RUN ln -s -f /bin/true /usr/bin/chfn
