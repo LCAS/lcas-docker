@@ -11,7 +11,7 @@ RUN apt-get install -y curl software-properties-common python-software-propertie
 RUN apt-key add /tmp/public.key
 RUN apt-add-repository http://lcas.lincoln.ac.uk/ubuntu/main
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-rospack python-rosinstall-generator python-wstool
+    ros-kinetic-rospack ros-kinetic-catkin python-rosinstall-generator python-wstool
 RUN bash -c "rm -rf /etc/ros/rosdep; source /opt/ros/kinetic/setup.bash;\
 	rosdep init"
 RUN curl -o /etc/ros/rosdep/sources.list.d/20-default.list https://raw.githubusercontent.com/LCAS/rosdistro/master/rosdep/sources.list.d/20-default.list
