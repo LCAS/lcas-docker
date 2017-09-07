@@ -21,6 +21,9 @@ RUN echo "index_url: https://raw.github.com/lcas/rosdistro/master/index.yaml" > 
 RUN bash -c "source /opt/ros/kinetic/setup.bash;\
 	export ROSDISTRO_INDEX_URL="https://raw.github.com/lcas/rosdistro/master/index.yaml"; \
         rosdep update"
+
+ENV ROSDISTRO_INDEX_URL https://raw.github.com/lcas/rosdistro/master/index.yaml
+
 RUN mkdir -p workspace/src
 WORKDIR workspace/src
 RUN bash -c 'source /opt/ros/kinetic/setup.bash;\
