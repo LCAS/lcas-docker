@@ -31,4 +31,4 @@ RUN bash -c 'source /opt/ros/kinetic/setup.bash;\
         catkin_init_workspace . ; \
 	wstool init; \
 '
-RUN apt-get install -y python-bloom vim nano less 
+RUN apt-get install -y python-bloom vim nano less ssh
