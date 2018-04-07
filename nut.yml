@@ -1,0 +1,27 @@
+syntax_version: "7"
+project_name: lcas-docker
+enable_gui: true
+volumes: # declare folders to mount in the container
+  main: # give each folder any name that you like
+    host_path: .               # this folder (from your computer) will be mounted as
+    container_path: /host      # this folder (in the container)
+container_working_directory: /host
+net: host
+macros:
+  clone:
+    usage: clone rosdistro
+    actions:
+      - apt-get update
+      - apt-get install git
+  bloom:
+    usage: build the project in the container
+    actions:
+    - "echo ${0}-${1}"
+  run:
+    usage: run the project in the container
+    actions:
+    - ls
+  bash:
+    actions:
+    - bash
+docker_image: strands/lcas-docker:xenial-base
