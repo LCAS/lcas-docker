@@ -14,4 +14,4 @@ macros:
     usage: interactive shell
     actions:
     - bash
-docker_image: lcasuol/lcas-docker:xenial-base
+docker_image: lcasuol/lcas-docker:trusty-base
