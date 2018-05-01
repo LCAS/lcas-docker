@@ -38,6 +38,7 @@ fi
 mkdir -p "$WORKSPACE/src"
 cd "$WORKSPACE"
 git -C "$WORKSPACE/src" clone --recursive "$GITURL" \
+  && apt-get update \
   && rosdep update \
   && rosdep install --from-paths . -i -y \
   && catkin_make_isolated --install \
