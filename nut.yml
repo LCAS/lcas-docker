@@ -9,6 +9,8 @@ volumes: # declare folders to mount in the container
     container_path: /host      # this folder (in the container)
 container_working_directory: /host
 net: host
+environment: # set environment variables
+  EMAIL: marc@hanheide.net
 macros:
   bash:
     usage: interactive shell
