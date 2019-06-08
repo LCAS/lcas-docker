@@ -34,8 +34,14 @@ RUN bash -c 'source /opt/ros/kinetic/setup.bash;\
 	export ROSDISTRO_INDEX_URL="https://raw.github.com/lcas/rosdistro/master/index.yaml"; \
         catkin_init_workspace . ; \
 	wstool init; \
+	rosdep update; \
+	apt-get install -y ssh openssh-server shellinabox vim git python-pip tmux openvpn python-wstool; \
+	pip install -U tmule; \
+	mkdir -p /usr/local/bin ; \
+	curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate; \
+	chmod +x /usr/local/bin/rmate; \
 '
-RUN git config --global user.email 'strands@hanheide.net'
+RUN git config --global user.email 'lcas@lincoln.ac.uk'
 RUN git config --global user.name 'L-CAS docker user'
 RUN git config --global credential.helper 'store'
 RUN curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate && chmod +x /usr/local/bin/rmate
