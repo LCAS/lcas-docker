@@ -17,4 +17,4 @@ macros:
     actions:
     - bash
 #docker_image: foo:latest
-docker_image: lcasuol/lcas-docker:xenial-base
+docker_image: lcasuol/lcas-docker:bionic-base
