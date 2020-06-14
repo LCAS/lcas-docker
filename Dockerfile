@@ -2,7 +2,7 @@
 FROM lcasuol/lcas-docker:xenial-base
 
 RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y ros-kinetic-catkin python-catkin-tools xvfb
-RUN git clone https://github.com/LCAS/teaching.git
+RUN git clone --recurse-submodules https://github.com/LCAS/teaching.git
 RUN rosdep update
 RUN rosdep install -i -y --from-paths . 
 RUN apt-get autoremove && apt-get clean
