@@ -1,12 +1,12 @@
 
-FROM lcasuol/lcas-docker:xenial-base
+FROM lcasuol/lcas-docker:bionic-base
 
-RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y ros-kinetic-catkin python-catkin-tools xvfb
+RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y ros-melodic-catkin python-catkin-tools xvfb
 RUN git clone --recurse-submodules https://github.com/LCAS/teaching.git
 RUN rosdep update
 RUN rosdep install -i -y --from-paths . 
 RUN apt-get autoremove && apt-get clean
-RUN bash -c "source /opt/ros/kinetic/setup.bash && catkin_make -C .."
+RUN bash -c "source /opt/ros/melodic/setup.bash && catkin_make -C .."
 
 # run stuff:
 # > source ../devel/setup.bash
